@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("General Setup Settings")]
+    [Tooltip("How fast the ship moves up/down/left/right")]
     [SerializeField] float movementSpeed = 2f;
+    [Tooltip("Left bounds for ship movement")]
     [SerializeField] float minXRange = 10f;
+    [Tooltip("Right bounds for ship movement")]
     [SerializeField] float maxXRange = 10f;
+    [Tooltip("Lower bounds for ship movement")]
     [SerializeField] float minYRange = 10f;
+    [Tooltip("Upper bounds for ship movement")]
     [SerializeField] float maxYRange = 10f;
+    [Tooltip("Weapons array, used to script firing controls")]
     [SerializeField] GameObject[] lasers;
 
-    [SerializeField] float positionPitchFactor = -2f;
-    [SerializeField] float positionYawFactor = 2f;
-    [SerializeField] float positionRollFactor = -20f;
-
+    [Header("Ship Rotation Settings")]
+    [Tooltip("How much the ship pitches up/down when pressing input keys")]
     [SerializeField] float pitchIntensity = -10f;
-    
+    [Tooltip("How much the ship pitches when moving up/down")]
+    [SerializeField] float positionPitchFactor = -2f;
+    [Tooltip("How much the ship yaws when moving left/right")]
+    [SerializeField] float positionYawFactor = 2f;
+    [Tooltip("How much the ship rolls when moving left/right")]
+    [SerializeField] float positionRollFactor = -20f;    
 
     float xInput, yInput;
     // Update is called once per frame
@@ -61,24 +71,21 @@ public class PlayerController : MonoBehaviour
     void ShipWeapons()
     {
         if (Input.GetButton("Fire1"))
-        {   
-            foreach (GameObject laser in lasers)
-            {
-                if (!laser.activeSelf)
-                {
-                    laser.SetActive(true);
-                }
-            }
+        {
+            FiringLasers(true);
         }
         else
         {
-            foreach (GameObject laser in lasers)
-            {
-                if (laser.activeSelf)
-                {
-                    laser.SetActive(false);
-                }
-            }
+            FiringLasers(false);
+        }
+    }
+
+    void FiringLasers(bool emissionState)
+    {
+        foreach (GameObject laser in lasers)
+        {
+            var emissionModule = laser.GetComponent<ParticleSystem>().emission;
+            emissionModule.enabled = emissionState;
         }
     }
 }

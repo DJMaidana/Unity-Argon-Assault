@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float maxXRange = 10f;
     [SerializeField] float minYRange = 10f;
     [SerializeField] float maxYRange = 10f;
+    [SerializeField] GameObject[] lasers;
 
     [SerializeField] float positionPitchFactor = -2f;
     [SerializeField] float positionYawFactor = 2f;
@@ -21,11 +22,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveShip();
-        RotateShip();
+        ShipMovement();
+        ShipRotation();
+        ShipWeapons();
     }
 
-    void MoveShip()
+    void ShipMovement()
     {
         xInput = Input.GetAxis("Horizontal");
         yInput = Input.GetAxis("Vertical");
@@ -42,7 +44,7 @@ public class PlayerController : MonoBehaviour
         transform.localPosition = clampedLocalPos;
     }
 
-    void RotateShip()
+    void ShipRotation()
     {
         transform.localRotation = Quaternion.Euler(-30f, 30f, 0f);
         float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;
@@ -54,5 +56,29 @@ public class PlayerController : MonoBehaviour
         
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
 
+    }
+
+    void ShipWeapons()
+    {
+        if (Input.GetButton("Fire1"))
+        {   
+            foreach (GameObject laser in lasers)
+            {
+                if (!laser.activeSelf)
+                {
+                    laser.SetActive(true);
+                }
+            }
+        }
+        else
+        {
+            foreach (GameObject laser in lasers)
+            {
+                if (laser.activeSelf)
+                {
+                    laser.SetActive(false);
+                }
+            }
+        }
     }
 }

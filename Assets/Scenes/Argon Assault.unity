@@ -707,8 +707,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d76602bf1c0e25eb6e8ca97d81847b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreAwarded: 5
+  scoreOnHit: 1
+  scoreOnDestroy: 10
+  hitPoints: 5
   vfx_EnemyExplosion: {fileID: 2668764013363617389, guid: 523f25b6c70149e5f84eb0c6c141b00c, type: 3}
+  vfx_EnemyHit: {fileID: 2668764013363617389, guid: 10539849ea435380a94a6059f8ffadb0, type: 3}
   parent: {fileID: 1039953173}
 --- !u!65 &948176920
 BoxCollider:
@@ -905,8 +908,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d76602bf1c0e25eb6e8ca97d81847b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreAwarded: 5
+  scoreOnHit: 1
+  scoreOnDestroy: 10
+  hitPoints: 5
   vfx_EnemyExplosion: {fileID: 2668764013363617389, guid: 523f25b6c70149e5f84eb0c6c141b00c, type: 3}
+  vfx_EnemyHit: {fileID: 2668764013363617389, guid: 10539849ea435380a94a6059f8ffadb0, type: 3}
   parent: {fileID: 1039953173}
 --- !u!65 &1026284764
 BoxCollider:
@@ -1153,8 +1159,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d76602bf1c0e25eb6e8ca97d81847b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreAwarded: 5
+  scoreOnHit: 1
+  scoreOnDestroy: 10
+  hitPoints: 5
   vfx_EnemyExplosion: {fileID: 2668764013363617389, guid: 523f25b6c70149e5f84eb0c6c141b00c, type: 3}
+  vfx_EnemyHit: {fileID: 2668764013363617389, guid: 10539849ea435380a94a6059f8ffadb0, type: 3}
   parent: {fileID: 1039953173}
 --- !u!65 &1438444326
 BoxCollider:
@@ -1419,8 +1428,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d76602bf1c0e25eb6e8ca97d81847b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreAwarded: 5
+  scoreOnHit: 1
+  scoreOnDestroy: 10
+  hitPoints: 5
   vfx_EnemyExplosion: {fileID: 2668764013363617389, guid: 523f25b6c70149e5f84eb0c6c141b00c, type: 3}
+  vfx_EnemyHit: {fileID: 2668764013363617389, guid: 10539849ea435380a94a6059f8ffadb0, type: 3}
   parent: {fileID: 1039953173}
 --- !u!65 &1629187653
 BoxCollider:
@@ -1687,8 +1699,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d76602bf1c0e25eb6e8ca97d81847b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreAwarded: 10
+  scoreOnHit: 1
+  scoreOnDestroy: 20
+  hitPoints: 10
   vfx_EnemyExplosion: {fileID: 2668764013363617389, guid: 523f25b6c70149e5f84eb0c6c141b00c, type: 3}
+  vfx_EnemyHit: {fileID: 2668764013363617389, guid: 10539849ea435380a94a6059f8ffadb0, type: 3}
   parent: {fileID: 1039953173}
 --- !u!1001 &5227256737645620729
 PrefabInstance:

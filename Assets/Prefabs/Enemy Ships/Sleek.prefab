@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreOnHit: 1
   scoreOnDestroy: 10
-  hitPoints: 2
+  hitPoints: 1
   vfx_EnemyExplosion: {fileID: 2668764013363617389, guid: 523f25b6c70149e5f84eb0c6c141b00c, type: 3}
   vfx_EnemyHit: {fileID: 2668764013363617389, guid: 10539849ea435380a94a6059f8ffadb0, type: 3}
   parentGameObject: {fileID: 0}

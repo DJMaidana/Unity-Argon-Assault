@@ -1158,10 +1158,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreOnHit: 1
   scoreOnDestroy: 10
-  hitPoints: 10
+  hitPoints: 2
   vfx_EnemyExplosion: {fileID: 2668764013363617389, guid: 523f25b6c70149e5f84eb0c6c141b00c, type: 3}
   vfx_EnemyHit: {fileID: 2668764013363617389, guid: 10539849ea435380a94a6059f8ffadb0, type: 3}
-  parent: {fileID: 0}
+  parentGameObject: {fileID: 0}
 --- !u!1 &5073528202003743944
 GameObject:
   m_ObjectHideFlags: 0

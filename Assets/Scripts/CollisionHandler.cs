@@ -11,6 +11,7 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] ParticleSystem vfx_Explosion;
     [SerializeField] AudioClip sfxExplosion;
 
+    [SerializeField] GameObject vfxToDestroy;
     PlayerController playerController;
     AudioSource audioSource;
 
@@ -27,6 +28,7 @@ public class CollisionHandler : MonoBehaviour
 
     void CrashSequence()
     {
+        Destroy(vfxToDestroy);
         playerController.FiringLasers(false);
         playerController.enabled = false;
         playerRig.GetComponent<Animator>().enabled = false;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -35,6 +36,11 @@ public class PlayerController : MonoBehaviour
         ShipMovement();
         ShipRotation();
         ShipWeapons();
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ReloadLevel();
+        }
     }
 
     void ShipMovement()
@@ -70,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
     void ShipWeapons()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") || Input.GetKey(KeyCode.Space)) 
         {
             FiringLasers(true);
         }
@@ -87,5 +93,11 @@ public class PlayerController : MonoBehaviour
             var emissionModule = laser.GetComponent<ParticleSystem>().emission;
             emissionModule.enabled = emissionState;
         }
+    }
+
+    void ReloadLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }

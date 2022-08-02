@@ -5,15 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
-    [SerializeField] float loadDelay = 1f;
+    [SerializeField] float loadDelay = 2f;
 
     [SerializeField] GameObject playerRig;
-    PlayerController playerController;
     [SerializeField] ParticleSystem vfx_Explosion;
+    [SerializeField] AudioClip sfxExplosion;
+
+    PlayerController playerController;
+    AudioSource audioSource;
 
     void Start()
     {
         playerController = GetComponent<PlayerController>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -24,9 +28,11 @@ public class CollisionHandler : MonoBehaviour
 
     void CrashSequence()
     {
+        playerController.FiringLasers(false);
         playerController.enabled = false;
         playerRig.GetComponent<Animator>().enabled = false;
         vfx_Explosion.Play();
+        audioSource.PlayOneShot(sfxExplosion);
         gameObject.GetComponent<MeshRenderer>().enabled = false;
         Invoke("ReloadLevel", loadDelay);
     }

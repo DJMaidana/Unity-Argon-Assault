@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void FiringLasers(bool emissionState)
+    public void FiringLasers(bool emissionState)
     {
         foreach (GameObject laser in lasers)
         {

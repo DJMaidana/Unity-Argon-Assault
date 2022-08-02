@@ -209,8 +209,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.15
       objectReference: {fileID: 0}
+    - target: {fileID: 3821561516885692664, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
+      propertyPath: playerRig
+      value: 
+      objectReference: {fileID: 5227256736793860299}
+    - target: {fileID: 3821561516885692664, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
+      propertyPath: sfxExplosion
+      value: 
+      objectReference: {fileID: 8300000, guid: d5a83e062c1d031008d88317409c3eda, type: 3}
+    - target: {fileID: 3821561516885692664, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
+      propertyPath: vfx_Explosion
+      value: 
+      objectReference: {fileID: 8704586147972716076}
     - target: {fileID: 5270347512314497995, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530569472709462116, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
+      propertyPath: SubModule.enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8612493789087174402, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
@@ -253,21 +269,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1611787651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5228591093861383121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f309e3cef0804097854909d201216b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadDelay: 1
-  playerRig: {fileID: 5227256736793860299}
-  vfx_Explosion: {fileID: 8704586147972716076}
 --- !u!1 &6543516073031738742 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1316686606077810407, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
